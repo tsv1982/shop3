@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">shop3</string>
+    <string name="addItems">add</string>
+    <string name="deleteItems">delete</string>
+    <string name="zero_item">0</string>
+    <string name="text_text">text</string>
+    <string name="text_shopping_item">Леггинсы женские, kyokushin</string>
+    <string name="item_size">размер:</string>
+    <string name="text_item_size">все размеры</string>
+    <string name="price">цена:</string>
+    <string name="text_price">1000 грн.</string>
+    <string name="get_item">get Item</string>
 </resources>

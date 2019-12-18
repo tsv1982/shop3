@@ -4,35 +4,41 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.tsv.shop3.Adapter.MainAdapter;
-import com.tsv.shop3.CreateProductDialog;
-import com.tsv.shop3.Presenter.IshopPresenter;
-import com.tsv.shop3.Presenter.ShopPresenter;
+import com.tsv.shop3.Presenter.IShoppingListPresenter;
+import com.tsv.shop3.Presenter.ShoppingListPresenter;
 import com.tsv.shop3.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements IMainActivity {
 
-    IshopPresenter ishopPresenter;
+    IShoppingListPresenter iShoppingListPresenter;
 
-    @BindView(R.id.LV_ShopLv)
+    @BindView(R.id.LV_Shopping_Item)
     ListView listView;
+    @BindView(R.id.TV_Text_Name)
+    TextView textView;
+    @BindView(R.id.ET_id_shopping_item)
+    EditText editText;
 
-    @OnClick({R.id.fab, R.id.fab_add, R.id.fab_delete})
-    void onSaveClick(View view) {
+    @OnClick({R.id.fab, R.id.fab_add, R.id.fab_delete, R.id.btn_get_item})
+    void onClick(View view) {
         switch (view.getId()) {
             case R.id.fab:
                 break;
             case R.id.fab_add:
-                CreateProductDialog createProductDialog = new CreateProductDialog();
-                createProductDialog.show(getSupportFragmentManager(), "create dialog");
                 break;
             case R.id.fab_delete:
+                break;
+            case R.id.btn_get_item:
+                iShoppingListPresenter.onButtonGetItem(Integer.parseInt(String.valueOf(editText.getText())));
                 break;
         }
     }
@@ -43,13 +49,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        iShoppingListPresenter = new ShoppingListPresenter(this);
 
-        ishopPresenter = new ShopPresenter();
+        MainAdapter mainAdapter = new MainAdapter(this, R.layout.list_main, iShoppingListPresenter.getListShoppingItem());
+        listView.setAdapter(mainAdapter);
 
-        MainAdapter mainAdapter = new MainAdapter(this, R.layout.list_main, ishopPresenter.getListProduct(this));
-        listView.setAdapter(mainAdapter);   // сетаем адаптер в листвиев
+    }
 
-
+    @Override
+    public void showNameShoppingItem(String name) {
+        textView.setText(name);
     }
 
 

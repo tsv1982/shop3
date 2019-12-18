@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.tsv.shop3.Model.IproductModel;
+import com.tsv.shop3.Model.Entity.ShoppingItem;
 import com.tsv.shop3.R;
 
 import java.util.List;
@@ -16,15 +16,15 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainAdapter extends ArrayAdapter<IproductModel> {
+public class MainAdapter extends ArrayAdapter<ShoppingItem> {
 
     private LayoutInflater inflater;
     private int layout;
-    private List<IproductModel> product1List;
+    private List<ShoppingItem> list;
 
-    public MainAdapter(Context context, int resource, List<IproductModel> product1List) {
-        super(context, resource, product1List);
-        this.product1List = product1List;
+    public MainAdapter(Context context, int resource, List<ShoppingItem> list) {
+        super(context, resource, list);
+        this.list = list;
         this.layout = resource;
         this.inflater = LayoutInflater.from(context);
     }
@@ -41,23 +41,22 @@ public class MainAdapter extends ArrayAdapter<IproductModel> {
             view.setTag(holder);
         }
 
-        holder.nameView.setText(product1List.get(position).getName());
-        holder.sizeView.setText(product1List.get(position).getSize());
-        holder.priceView.setText(String.valueOf(product1List.get(position).getPrice()));
+        holder.textViewNameItem.setText(list.get(position).getName());
+
 
         return view;
     }
 
     static class ViewHolder {
 
-        @BindView(R.id.imageIV)
+        @BindView(R.id.IV_shopping_item)
         ImageView imageShopVie;
-        @BindView(R.id.nameIV)
-        TextView nameView;
-        @BindView(R.id.sizeIV)
-        TextView sizeView;
-        @BindView(R.id.priceIV)
-        TextView priceView;
+        @BindView(R.id.TV_name_shopping_item)
+        TextView textViewNameItem;
+        @BindView(R.id.TV_size_shopping_item)
+        TextView textViewSizeItem;
+        @BindView(R.id.TV_price_shopping_item)
+        TextView textViewPrice;
 
         public ViewHolder(View view) {
             ButterKnife.bind(this, view);

@@ -8,25 +8,47 @@
     android:orientation="vertical"
     tools:context=".View.MainActivity">
 
-
-    <TextView
-        android:id="@+id/rrr"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/ET_id_shopping_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="1"
+            android:textSize="30sp"/>
+
+        <TextView
+            android:id="@+id/TV_Text_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/text_text"
+            android:textColor="@color/colorXX"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/btn_get_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/get_item"/>
+
+    </LinearLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="1">
 
-
         <ListView
-            android:id="@+id/LV_ShopLv"
+            android:id="@+id/LV_Shopping_Item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp">
-        </ListView>
-
+            android:layout_marginBottom="15dp" />
 
         <RelativeLayout
             android:layout_width="300dp"
@@ -34,19 +56,18 @@
             android:layout_gravity="end"
             android:orientation="vertical">
 
-
             <TextView
-                android:id="@+id/Tv_count_tw"
+                android:id="@+id/TV_count_tw"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="75dp"
-                android:text="0"
-                android:textSize="20dp"
-                android:visibility="invisible"
-                android:textColor="@color/colorBT"/>
+                android:text="@string/zero_item"
+                android:textColor="@color/colorBT"
+                android:textSize="20sp"
+                android:visibility="invisible" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fab"
@@ -56,7 +77,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="40dp"
-                android:backgroundTint="#F5F5F5"
+                android:backgroundTint="@color/colorBT"
                 android:src="@android:drawable/ic_input_add" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -67,22 +88,21 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginEnd="28dp"
                 android:layout_marginBottom="110dp"
-                android:backgroundTint="#F5F5F5"
+                android:backgroundTint="@color/colorBT"
                 android:src="@android:drawable/ic_input_add"
                 app:fabSize="mini" />
 
             <TextView
-                android:id="@+id/text_add"
+                android:id="@+id/TV_add"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginEnd="75dp"
                 android:layout_marginBottom="120dp"
-                android:text="add"
-                android:textSize="20dp"
-                android:textColor="@color/colorXX"/>
-
+                android:text="@string/addItems"
+                android:textColor="@color/colorXX"
+                android:textSize="20sp" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fab_delete"
@@ -92,22 +112,21 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginEnd="28dp"
                 android:layout_marginBottom="155dp"
-                android:backgroundTint="#F5F5F5"
+                android:backgroundTint="@color/colorBT"
                 android:src="@android:drawable/ic_delete"
                 app:fabSize="mini" />
 
             <TextView
-                android:id="@+id/text_delete"
+                android:id="@+id/TV_delete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginEnd="75dp"
                 android:layout_marginBottom="162dp"
-                android:text="delete"
-                android:textSize="20dp"
-                android:textColor="@color/colorXX"/>
-
+                android:text="@string/deleteItems"
+                android:textColor="@color/colorXX"
+                android:textSize="20sp" />
 
         </RelativeLayout>
 
