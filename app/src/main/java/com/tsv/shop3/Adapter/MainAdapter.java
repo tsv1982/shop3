@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.tsv.shop3.Model.ShoppingListItem;
+import com.tsv.shop3.Model.Entity.ShoppingItem;
 import com.tsv.shop3.R;
 
 import java.util.List;
@@ -16,13 +16,13 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainAdapter extends ArrayAdapter<ShoppingListItem> {
+public class MainAdapter extends ArrayAdapter<ShoppingItem> {
 
     private LayoutInflater inflater;
     private int layout;
-    private List<ShoppingListItem> list;
+    private List<ShoppingItem> list;
 
-    public MainAdapter(Context context, int resource, List<ShoppingListItem> list) {
+    public MainAdapter(Context context, int resource, List<ShoppingItem> list) {
         super(context, resource, list);
         this.list = list;
         this.layout = resource;

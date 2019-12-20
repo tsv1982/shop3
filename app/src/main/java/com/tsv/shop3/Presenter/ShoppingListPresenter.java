@@ -1,8 +1,8 @@
 package com.tsv.shop3.Presenter;
 
+import com.tsv.shop3.Model.Entity.ShoppingItem;
+import com.tsv.shop3.Model.IShoppingListItem;
 import com.tsv.shop3.Model.ShoppingListItem;
-import com.tsv.shop3.Model.IShoppingListModel;
-import com.tsv.shop3.Model.ShoppingListModel;
 import com.tsv.shop3.View.IMainActivity;
 
 import java.util.List;
@@ -10,21 +10,21 @@ import java.util.List;
 public class ShoppingListPresenter implements IShoppingListPresenter {
 
     private IMainActivity iMainActivity;
-    private IShoppingListModel iShoppingListModel;
+    private IShoppingListItem iShoppingListItem;
 
     public ShoppingListPresenter(IMainActivity iMainActivity) {
         this.iMainActivity = iMainActivity;
-        this.iShoppingListModel = new ShoppingListModel();
+        this.iShoppingListItem = new ShoppingListItem();
     }
 
     @Override
     public void onButtonGetItem(int id) {
-        iMainActivity.showNameShoppingItem(iShoppingListModel.findItem(id).getName());
+        iMainActivity.showNameShoppingItem(iShoppingListItem.findItem(id).getName());
     }
 
     @Override
-    public List<ShoppingListItem> getListShoppingItem() {
-        return iShoppingListModel.getItems();
+    public List<ShoppingItem> getListShoppingItem() {
+        return iShoppingListItem.getListShoppingItem();
     }
 
 

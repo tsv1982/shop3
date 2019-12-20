@@ -1,6 +1,6 @@
 package com.tsv.shop3.Presenter;
 
-import com.tsv.shop3.Model.ShoppingListItem;
+import com.tsv.shop3.Model.Entity.ShoppingItem;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ public interface IShoppingListPresenter {
 
     void onButtonGetItem(int id);
 
-    List<ShoppingListItem> getListShoppingItem();
+    List<ShoppingItem> getListShoppingItem();
 
     void onButtonRemove();
 
