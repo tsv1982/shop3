@@ -9,6 +9,7 @@ public interface IShoppingListItem {
 
 
     ShoppingItem findItem(int id);
+    ShoppingItem findItem1(int id);
 
     boolean removeItem(int id);
 
