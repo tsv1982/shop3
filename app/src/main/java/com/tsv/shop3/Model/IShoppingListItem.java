@@ -6,6 +6,8 @@ public interface IShoppingListItem {
 
     boolean addItem(ShoppingItem shoppingItem);
 
+
+
     ShoppingItem findItem(int id);
 
     boolean removeItem(int id);
