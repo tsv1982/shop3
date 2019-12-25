@@ -1,7 +1,6 @@
 package com.tsv.shop3.Model;
 
 import com.tsv.shop3.BD.BD;
-import com.tsv.shop3.Model.Entity.ShoppingItem;
 
 import java.util.List;
 

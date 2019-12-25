@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.tsv.shop3.Model.Entity.ShoppingItem;
+import com.tsv.shop3.Model.ShoppingItem;
 import com.tsv.shop3.R;
 
 import java.util.List;

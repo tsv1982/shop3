@@ -1,4 +1,4 @@
-package com.tsv.shop3.Model.Entity;
+package com.tsv.shop3.Model;
 
 public class ShoppingItem {
     int id;

@@ -1,6 +1,6 @@
 package com.tsv.shop3.Presenter;
 
-import com.tsv.shop3.Model.Entity.ShoppingItem;
+import com.tsv.shop3.Model.ShoppingItem;
 import com.tsv.shop3.Model.IShoppingListItem;
 import com.tsv.shop3.Model.ShoppingListItem;
 import com.tsv.shop3.View.IMainActivity;
