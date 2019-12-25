@@ -2,7 +2,7 @@ package com.tsv.shop3.Model;
 
 import java.util.List;
 
-public interface IProductListItem {
+public interface IProductItemsModel {
 
     boolean addItem(ProductItem item);
 

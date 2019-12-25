@@ -7,11 +7,11 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class ProductListItem implements IProductListItem {
+public class ProductItemsModel implements IProductItemsModel {
 
     List<ProductItem> items;
 
-    public ProductListItem() {
+    public ProductItemsModel() {
         items = new ArrayList<>();
     }
 
