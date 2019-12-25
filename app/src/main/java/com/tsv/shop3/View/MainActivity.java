@@ -9,8 +9,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.tsv.shop3.Adapter.MainAdapter;
-import com.tsv.shop3.Presenter.IShoppingListPresenter;
-import com.tsv.shop3.Presenter.ShoppingListPresenter;
+import com.tsv.shop3.Presenter.IProductListPresenter;
+import com.tsv.shop3.Presenter.ProductListPresenter;
 import com.tsv.shop3.R;
 
 import butterknife.BindView;
@@ -19,7 +19,7 @@ import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity implements IMainActivity {
 
-    IShoppingListPresenter iShoppingListPresenter;
+    IProductListPresenter iProductListPresenter;
 
     @BindView(R.id.LV_Shopping_Item)
     ListView listView;
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
             case R.id.fab_delete:
                 break;
             case R.id.btn_get_item:
-                iShoppingListPresenter.onButtonGetItem(Integer.parseInt(String.valueOf(editText.getText())));
+                iProductListPresenter.onButtonGetItem(Integer.parseInt(String.valueOf(editText.getText())));
                 break;
         }
     }
@@ -49,9 +49,9 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        iShoppingListPresenter = new ShoppingListPresenter(this);
+        iProductListPresenter = new ProductListPresenter(this);
 
-        MainAdapter mainAdapter = new MainAdapter(this, R.layout.list_main, iShoppingListPresenter.getListShoppingItem());
+        MainAdapter mainAdapter = new MainAdapter(this, R.layout.list_main, iProductListPresenter.getListShoppingItem());
         listView.setAdapter(mainAdapter);
 
     }
