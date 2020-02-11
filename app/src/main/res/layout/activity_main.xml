@@ -4,45 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/fon"
     android:orientation="vertical"
     tools:context=".View.MainActivity">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/ET_id_shopping_item"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="1"
-            android:textSize="30sp"/>
-
-        <TextView
-            android:id="@+id/TV_Text_Name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/text_text"
-            android:textColor="@color/colorXX"
-            android:textSize="30sp" />
-
-        <Button
-            android:id="@+id/btn_get_item"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/get_item"/>
-
-    </LinearLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="45dp"
         android:layout_weight="1">
+
 
         <ListView
             android:id="@+id/LV_Shopping_Item"
@@ -65,9 +36,9 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="75dp"
                 android:text="@string/zero_item"
-                android:textColor="@color/colorBT"
+                android:textColor="@color/colorYellow"
                 android:textSize="20sp"
-                android:visibility="invisible" />
+                android:visibility="visible" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fab"
@@ -81,7 +52,7 @@
                 android:src="@android:drawable/ic_input_add" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab_add"
+                android:id="@+id/fab_exit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -89,23 +60,23 @@
                 android:layout_marginEnd="28dp"
                 android:layout_marginBottom="110dp"
                 android:backgroundTint="@color/colorBT"
-                android:src="@android:drawable/ic_input_add"
+                android:src="@android:drawable/ic_delete"
                 app:fabSize="mini" />
 
             <TextView
-                android:id="@+id/TV_add"
+                android:id="@+id/TV_exit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginEnd="75dp"
                 android:layout_marginBottom="120dp"
-                android:text="@string/addItems"
-                android:textColor="@color/colorXX"
+                android:text="@string/exit"
+                android:textColor="@color/colorYellow"
                 android:textSize="20sp" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab_delete"
+                android:id="@+id/fab_basket"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -117,18 +88,163 @@
                 app:fabSize="mini" />
 
             <TextView
-                android:id="@+id/TV_delete"
+                android:id="@+id/TV_add"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginEnd="75dp"
                 android:layout_marginBottom="162dp"
+                android:text="@string/addItems"
+                android:textColor="@color/colorYellow"
+                android:textSize="20sp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_add_admin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="28dp"
+                android:layout_marginBottom="155dp"
+                android:backgroundTint="@color/colorBT"
+                android:src="@android:drawable/ic_delete"
+                app:fabSize="mini" />
+
+            <TextView
+                android:id="@+id/TV_add_admin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="75dp"
+                android:layout_marginBottom="162dp"
+                android:text="@string/addItems"
+                android:textColor="@color/colorYellow"
+                android:textSize="20sp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_sort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="28dp"
+                android:layout_marginBottom="200dp"
+                android:backgroundTint="@color/colorBT"
+                android:src="@android:drawable/ic_delete"
+                app:fabSize="mini" />
+
+            <TextView
+                android:id="@+id/TV_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="75dp"
+                android:layout_marginBottom="205dp"
                 android:text="@string/deleteItems"
-                android:textColor="@color/colorXX"
+                android:textColor="@color/colorYellow"
+                android:textSize="20sp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_delete_admin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="28dp"
+                android:layout_marginBottom="200dp"
+                android:backgroundTint="@color/colorBT"
+                android:src="@android:drawable/ic_delete"
+                app:fabSize="mini" />
+
+            <TextView
+                android:id="@+id/TV_delete_admin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="75dp"
+                android:layout_marginBottom="205dp"
+                android:text="@string/deleteItems"
+                android:textColor="@color/colorYellow"
+                android:textSize="20sp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_change_admin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="28dp"
+                android:layout_marginBottom="245dp"
+                android:backgroundTint="@color/colorBT"
+                android:src="@android:drawable/ic_delete"
+                app:fabSize="mini" />
+
+            <TextView
+                android:id="@+id/TV_change_admin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="75dp"
+                android:layout_marginBottom="250dp"
+                android:text="@string/fab_change_admin"
+                android:textColor="@color/colorYellow"
+                android:textSize="20sp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_orders_admin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="28dp"
+                android:layout_marginBottom="290dp"
+                android:backgroundTint="@color/colorBT"
+                android:src="@android:drawable/ic_delete"
+                app:fabSize="mini" />
+
+            <TextView
+                android:id="@+id/TV_orders_admin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="75dp"
+                android:layout_marginBottom="295dp"
+                android:text="@string/fab_orders_admin"
+                android:textColor="@color/colorYellow"
+                android:textSize="20sp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_archive_orders_admin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="28dp"
+                android:layout_marginBottom="335dp"
+                android:backgroundTint="@color/colorBT"
+                android:src="@android:drawable/ic_delete"
+                app:fabSize="mini" />
+
+            <TextView
+                android:id="@+id/TV_archive_orders_admin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="75dp"
+                android:layout_marginBottom="340dp"
+                android:text="@string/fab_archive_orders"
+                android:textColor="@color/colorYellow"
                 android:textSize="20sp" />
 
         </RelativeLayout>
+
 
     </FrameLayout>
 

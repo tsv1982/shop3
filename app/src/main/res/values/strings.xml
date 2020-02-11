@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">shop3</string>
-    <string name="addItems">add</string>
-    <string name="deleteItems">delete</string>
+    <string name="addItems">добавить</string>
+    <string name="deleteItems">удалить</string>
     <string name="zero_item">0</string>
     <string name="text_text">text</string>
     <string name="text_shopping_item">Леггинсы женские, kyokushin</string>
@@ -10,4 +10,8 @@
     <string name="price">цена:</string>
     <string name="text_price">1000 грн.</string>
     <string name="get_item">get Item</string>
+    <string name="fab_change_admin">изменить</string>
+    <string name="fab_orders_admin">заказы</string>
+    <string name="fab_archive_orders">архив заказов</string>
+    <string name="exit">выйти</string>
 </resources>
